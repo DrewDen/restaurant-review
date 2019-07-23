@@ -8,8 +8,17 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 5500
-    return `http://127.0.0.1:${port}/data/restaurants.json`;
+    const isOfflineMode = localStorage.getItem('isOfflineMode') === 'true';
+    if(isOfflineMode){
+      //This is "offline" mode for GH pages because the request 
+      //will always fail.
+      const port = 5500
+      return `http://127.0.0.1:${port}/data/restaurants.json`;
+    } else{
+      //This is "online" mode for GH pages because the request 
+      //will always succeed.
+      return '/data/restaurants.json';
+    }
   }
 
   /**
@@ -29,6 +38,7 @@ class DBHelper {
       }
     };
     xhr.send();
+    // console.log(data);
   }
 
   /**

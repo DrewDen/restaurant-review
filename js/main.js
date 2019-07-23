@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+  setMode();
 });
 
 /**
@@ -210,3 +211,24 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 }  */
 
+setMode = () => {
+  let toggleGroup = document.getElementsByClassName('toggle-group')[0];
+
+  const toggleInterval = setInterval(() => {
+    if(toggleGroup){
+      clearInterval(toggleInterval);
+
+      let isOfflineMode = localStorage.getItem('isOfflineMode') === 'true';
+      if(isOfflineMode){
+        document.getElementsByClassName('toggle')[0].click()
+      }
+
+      toggleGroup.addEventListener('click', (e) => {
+        isOfflineMode = !isOfflineMode;
+        localStorage.setItem('isOfflineMode', isOfflineMode);
+        })
+    } else{
+      toggleGroup = document.getElementsByClassName('toggle-group')[0];
+    }
+  }, 25);
+}
