@@ -123,6 +123,8 @@ nav h1 a {
   background-color: #3397DB;
   align-items: center;
   display:flex;
+  flex-direction: row;
+  justify-content: space-between;
   flex-wrap:wrap;
 }
 .filter-options h2 {
@@ -142,6 +144,26 @@ nav h1 a {
   margin: 10px;
   padding: 0 10px;
   width: 200px;
+}
+.filter-options div{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#offline-option{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: 'center';
+  padding: 10px;
+}
+#offline-option .toggle{
+  border: 1px solid white;
+}
+
+.toggle-off{
+  background: lightgray;
 }
 
 /* ====================== Restaurant Listing ====================== */
