@@ -151,20 +151,6 @@ nav h1 a {
   justify-content: flex-start;
   align-items: center;
 }
-#offline-option{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: 'center';
-  padding: 10px;
-}
-#offline-option .toggle{
-  border: 1px solid white;
-}
-
-.toggle-off{
-  background: lightgray;
-}
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
