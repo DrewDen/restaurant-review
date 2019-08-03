@@ -1,4 +1,5 @@
-var restaurantImg = require("../img/one.jpg");
+import img1 from "../img/one.jpg"
+
 
 /**
  * Common database helper functions.
