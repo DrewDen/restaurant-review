@@ -1,4 +1,3 @@
-import img1 from "../img/one.jpg"
 
 
 /**
